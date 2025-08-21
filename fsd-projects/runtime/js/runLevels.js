@@ -42,7 +42,7 @@ var runLevels = function (window) {
 // DON'T REMOVE THIS CODE //////////////////////////////////////////////////////
 if (
   typeof process !== "undefined" &&
-  typeof process.versions.node !== "undefined"
+  typeof process.versions.node !== "undefined" 
 ) {
   // here, export any references you need for tests //
   module.exports = runLevels;
