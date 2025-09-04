@@ -761,6 +761,15 @@ function handleKeyDown(e) {
   if (e.key === "ArrowDown" || e.key === "s") {
     keyPress.down = true;
   }
+  if (e.key === "ArrowDown" || e.key === "s") {
+    maxSpeed+=4;
+  }
+  if (maxSpeed > 16) {
+    maxSpeed-=4;
+  }
+  if (maxSpeed > 8) {
+    maxSpeed-=0.5;
+  }
   if (e.key === "ArrowRight" || e.key === "d") {
     keyPress.right = true;
   }
