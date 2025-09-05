@@ -764,7 +764,7 @@ function handleKeyDown(e) {
   if (e.key === "ArrowDown" || e.key === "s") {
     maxSpeed+=4;
   }
-  if (maxSpeed > 16) {
+  if (maxSpeed > 18) {
     maxSpeed-=4;
   }
   if (maxSpeed > 8) {
@@ -803,3 +803,5 @@ function handleKeyUp(e) {
 function loadJson() {
   getJSON("halle.json", JsonFunction); //runs this before the setup because of timing things
 }
+
+  

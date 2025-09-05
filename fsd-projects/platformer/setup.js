@@ -7,6 +7,7 @@ const playerJumpStrength = 12; // this is subtracted from the speedY each jump
 const projectileSpeed = 8; // the speed of projectiles
 let shouldDrawGrid = false;
 
+
 /////////////////////////////////////////////////
 //////////ONLY CHANGE ABOVE THIS POINT///////////
 /////////////////////////////////////////////////
@@ -98,4 +99,9 @@ var collectableList = {
   kennedi: { image: "images/collectables/kennedi-head.png" },
   max: { image: "images/collectables/max-head.png" },
   steve: { image: "images/collectables/steve-head.png" },
+  ring: { image: "images/collectables/sonic-ring.png" },
+  knuckles: { image: "images/collectables/knuckles.png" },
+  tails: { image: "images/collectables/tails.png" },
+  shadow: { image: "images/collectables/shadow (1).png" },
+  eggman: { image: "images/collectables/eggman.png" },
 };
