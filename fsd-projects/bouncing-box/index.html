@@ -49,7 +49,10 @@
         });
 
         // Every 50 milliseconds, call the update Function (see below)
-        setInterval(update, 50);
+        var interval = setInterval(update, 50);
+        function endGame() {
+          clearInterval(interval);
+        }
 
         // Every time the box is clicked, call the handleBoxClick Function (see below)
         box.on("click", handleBoxClick);
@@ -76,8 +79,8 @@
         var positionY = 0;
         var speedY = 10;
         var boardHeight = jQuery(window).height();
-        var getRandomColor = Math.random() * 255;
-        var colorStr = getRandomColor;
+        var colorStr;
+          
         
         
         
@@ -103,8 +106,13 @@
           }
           
           
+          
+          
         }
-
+        function getRandomColor() {
+          colorStr = "rgb(" + Math.random() * 255 + ", " + Math.random() * 255 + ", " + Math.random() * 255 + ")";
+          box.css("background-color", colorStr);
+        }
      
 
         /**
@@ -116,15 +124,24 @@
          */
         function handleBoxClick() {
           
-          var randNum = Math.random() * boardWidth;
-          var randNumY = Math.random() * boardHeight;
+          var randNum = Math.random() * boardWidth - 50;
+          var randNumY = Math.random() * boardHeight - 50;
           positionY = randNumY;
           positionX = randNum;
           changeBoxText(points);
           points ++;
           speed = 3 * points + 10;
-          speedY = 3 * points +10;
-
+          speedY = 3 * points + 10;
+          
+          getRandomColor();
+          
+          if (handleBoxClick % 3 === 0) {
+            speed +=1;
+            speedY +=1;
+          } else {
+            speed = speed;
+            speedY = speedY;
+          }
           
 
 
