@@ -50,9 +50,7 @@
 
         // Every 50 milliseconds, call the update Function (see below)
         var interval = setInterval(update, 50);
-        function endGame() {
-          clearInterval(interval);
-        }
+        
 
         // Every time the box is clicked, call the handleBoxClick Function (see below)
         box.on("click", handleBoxClick);
@@ -123,6 +121,16 @@
          * - increase the speed
          * - move the box to the left side of the screen.
          */
+        function endGame() {
+          clearInterval(interval);
+          if (misClick > 10) {
+          endGame;
+          }
+        }
+        var misClick = 0;
+        if (handleBoxClick !== true) {
+          misClick ++;
+        } 
         
         function handleBoxClick() {
           
