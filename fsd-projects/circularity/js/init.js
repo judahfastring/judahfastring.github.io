@@ -20,28 +20,32 @@ var init = function (window) {
         ///////////////////
         
         // TODO 1 : Declare and initialize our variables
-        var circle;
+        var circle; 
         var circles = []
 
 
         // TODO 2 : Create a function that draws a circle 
         function drawCircle() {
-            circle = draw.randomCircleInArea(canvas, true, true, "#999", 2);
-            physikz.addRandomVelocity(circle, canvas, 5, 5);
-            view.addChild(circle);
+            circle = draw.randomCircleInArea(canvas, true, true, "#999", 2); //this tells the varuable curcle what its supposed to be
+            physikz.addRandomVelocity(circle, canvas, 5, 5); // this adds a random velocity to the circles that is less than 5
+            view.addChild(circle); 
             circles.push(circle);
         }
 
 
         // TODO 3 : Call the drawCircle() function
-        for (var i = 0; i < 25; i++) {
-            drawCircle();
-        }
+        //drawCircle(); this draws a circle
+        //drawCircle(); this draws a circle
+        //drawCircle(); this draws a circle
+        //drawCircle(); this draws a circle
+        //drawCircle(); this draws a circle
         
         
 
         // TODO 7 : Use a loop to create multiple circles
-
+        for (var i = 0; i < 100; i++) { // this draws 100 circles
+            drawCircle();
+        }
 
 
 
@@ -56,12 +60,23 @@ var init = function (window) {
         */
         function update() {
             // TODO 4 : Update the position of each circle using physikz.updatePosition()
-            
+            //physikz.updatePosition(circles[0]); this updates the position of the first circle
+            //physikz.updatePosition(circles[1]); this updates the position of the second circle
+            //physikz.updatePosition(circles[2]); this updates the position of the third circle
+            //physikz.updatePosition(circles[3]); this updates the position of the fourth circle
+            //physikz.updatePosition(circles[4]); this updates the position of the fifth circle
             // TODO 5 : Call game.checkCirclePosition() on your circles
-            
+            //game.checkCirclePosition(circles[0]); this checks if the first circle is off the screen
+            //game.checkCirclePosition(circles[1]); this checks if the first circle is off the screen
+            //game.checkCirclePosition(circles[2]); this checks if the first circle is off the screen
+            //game.checkCirclePosition(circles[3]); this checks if the first circle is off the screen
+            //game.checkCirclePosition(circles[4]); this checks if the first circle is off the screen
             // TODO 8 / TODO 9 : Iterate over the array
-            game.checkCirclePosition(circles[i]);
-            physikz.updatePosition(circles[i]);
+            //
+            for (var i = 0; i < 100; i++) { // this updates the position and checks if the circle is off the screen
+                physikz.updatePosition(circles[i]);
+                game.checkCirclePosition(circles[i]);
+            }
         }
     
         /* 
@@ -69,7 +84,7 @@ var init = function (window) {
         Function. If that circle drifts off the screen, this Function should move
         it to the opposite side of the screen.
         */
-        game.checkCirclePosition = function(circle) {
+        game.checkCirclePosition = function(circle) { // will check if the circles are off the screen
 
             // if the circle has gone past the RIGHT side of the screen then place it on the LEFT
             if ( circle.x > canvas.width ) {
@@ -78,13 +93,13 @@ var init = function (window) {
             
             // TODO 6 : YOUR CODE STARTS HERE //////////////////////
             
-            if (circle.x < 0) {
+            if (circle.x < 0) { // if the circle is off the left side of the screen, it will be teleported to the right side of the screen
                 circle.x = 1900;
             }
-            if (circle.y < 0) {
+            if (circle.y < 0) { // if the circle is off the top of the screen, it will be teleported to the bottom of the screen
                 circle.y = 1000;
             }
-            if (circle.y > 1000) {
+            if (circle.y > 1000) { // if the circle is off the bottom of the screen, it will be teleported to the top of the screen
                 circle.y = 0;
             }
             
