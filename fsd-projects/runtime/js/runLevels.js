@@ -32,39 +32,87 @@ var runLevels = function (window) {
       obstacleHitZone.rotationalVelocity = 10;
     }
 
-
     
 
-    createObstacle(400,groundY-177,10000);
-    createObstacle(400,groundY-36,10000);
-    createObstacle(750,groundY-185,10000);
-    createObstacle(750,groundY-50,10000);
+
+
     
+    
+    function createEnemy(x,y) {
+      var enemy = game.createGameItem("enemy", 25); //creates enemy game item and stores its hit zone as 25 
+      var enemyImage = draw.rect(50, 50, "red"); //creates image of enemy
+      enemyImage.x = -25;//offsets the image by 25 in the x direction
+      enemyImage.y = -25;//offsets the image by 25 in the y direction
+      enemy.addChild(enemyImage);//attaches the image to the enemy object
+      enemy.x = x;//sets x posititon
+      enemy.y = y;//sets x posititon
+      game.addGameItem(enemy); //adds the enemy to the game
+      enemy.velocityX = -1;//animates the enemy
 
-    var enemy = game.createGameItem("enemy", 25);
-    var redSquare = draw.rect(50, 50, "red");
-    redSquare.x = -25;
-    redSquare.y = -25;
-    enemy.addChild(redSquare);
-    enemy.x = 400;
-    enemy.y = groundY - 50;
-    game.addGameItem(enemy);
-    enemy.velocityX = -1;
+      enemy.onPlayerCollision = function () {//handles when the enemy collides with the player
+        game.changeIntegrity(-20);//enemy's damage to the player
+      };
 
-    enemy.onPlayerCollision = function () {
-      game.changeIntegrity(-10);
-    };
+      enemy.onProjectileCollision = function () {//handles when the projectiles hit the enemies
+        game.increaseScore(100);//gives points based on if you kill the enemy 
+        enemy.fadeOut();//makes the enemy fade out of the game
+      };
+    }
+    createEnemy(400,groundY-50);
+    createEnemy(500,groundY-50);
+    function createReward(x,y) {
+      var reward = game.createGameItem("reward", 25); //creates reward game item and stores its hit zone as 25 
+      var rewardImage = draw.rect(50, 50, "blue"); //creates image of reward
+      rewardImage.x = -25;//offsets the image by 25 in the x direction
+      rewardImage.y = -25;//offsets the image by 25 in the y direction
+      reward.addChild(rewardImage);//attaches the image to the reward object
+      reward.x = x;//sets x posititon
+      reward.y = y;//sets x posititon
+      game.addGameItem(reward); //adds the reward to the game
+      reward.velocityX = -1;//animates the reward
 
-    enemy.onProjectileCollision = function () {
-      game.increaseScore(10000);
-      enemy.fadeOut();
-    };
+      reward.onPlayerCollision = function () {//handles when the reward collides with the player
+        game.changeIntegrity(20);//reward's damage to the player
+        reward.fadeOut();
+      };
 
+      
+    }
+    createReward(700,groundY);
+    createReward(900,groundY);
+    function createLevelMarker(x,y) {
+      var levelMarker = game.createGameItem("Level", 25); //creates levelMarker game item and stores its hit zone as 25 
+      var levelImage = draw.rect(50, 50, "yellow"); //creates image of levelMarker
+      levelImage.x = -25;//offsets the image by 25 in the x direction
+      levelImage.y = -25;//offsets the image by 25 in the y direction
+      levelMarker.addChild(levelImage);//attaches the image to the levelMarker object
+      levelMarker.x = x;//sets x posititon
+      levelMarker.y = y;//sets x posititon
+      game.addGameItem(levelMarker); //adds the levelMarker to the game
+      levelMarker.velocityX = -1;//animates the levelMarker
 
+      levelMarker.onPlayerCollision = function () {//handles when the levelMarker collides with the player
+        game.changeIntegrity(20);//levelMarker's damage to the player
+        levelMarker.fadeOut();
+        startLevel();
+      };
+
+      
+    }
+    createLevelMarker(1100,groundY);
     function startLevel() {
       // TODO 13 goes below here
-
-
+      var level = levelData[currentLevel];//fetches the current level from the levelData array and stores it inside of level 
+      var levelObjects = level.gameItems;//retrieves the array of gameItems and stores it in levelObjects variable
+      for (var i = 0;i<levelObjects.length;i++){
+        var element = levelObjects[i];
+        if (element.type === "obstacle") {
+          createObstacle(element.x,element.y,element.damage);
+        }
+        if (element.type === "enemy") {
+          createObstacle(element.x,element.y,element.damage);
+        }
+      }
 
       //////////////////////////////////////////////
       // DO NOT EDIT CODE BELOW HERE
