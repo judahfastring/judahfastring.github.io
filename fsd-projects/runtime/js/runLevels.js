@@ -55,6 +55,7 @@ var runLevels = function (window) {
 
       enemy.onPlayerCollision = function () {//handles when the enemy collides with the player
         game.changeIntegrity(damage);//enemy's damage to the player
+        enemy.fadeOut();
       };
 
       enemy.onProjectileCollision = function () {//handles when the projectiles hit the enemies
