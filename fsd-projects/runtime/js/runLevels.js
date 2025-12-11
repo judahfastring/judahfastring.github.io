@@ -36,7 +36,7 @@ var runLevels = function (window) {
 
     
 
-
+    
 
     
     
@@ -126,6 +126,7 @@ var runLevels = function (window) {
         if (element.type === "levelMarker") {
           createLevelMarker(element.x,element.y,element.heal,element.image, element.scaleX, element.scaleY, element.offsetX, element.offsetY, element.score, element.velocity, element.hitZoneSize);
         }
+        
       }
 
       //////////////////////////////////////////////
