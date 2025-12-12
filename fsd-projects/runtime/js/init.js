@@ -79,6 +79,8 @@ var init = function (window) {
   window.hud = hud;
 
   var game = opspark.createGameManager(app, hud);
+  window.opspark.game = game;
+
   opspark.makeDataInGame(game);
   opspark.runLevelInGame(game);
 };

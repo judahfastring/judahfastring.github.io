@@ -31,6 +31,8 @@ var background = function (window) {
         // TODO (several):
         var tree;
         var buildings = [];
+        var winImage;
+        var youWin = false;
       
         // called at the start of game and whenever the page is resized
         // add objects for display in background. draws each image added to the background once
@@ -89,6 +91,12 @@ var background = function (window) {
             tree.y = groundY-230;//sets the y position
             background.addChild(tree);//adds the tree to background container
             */
+           if (youWin) {
+            winImage = draw.bitmap("img/level complete (2).png");//creates bitmap object using the tree image
+            winImage.x = 600;//sets the x postition
+            winImage.y = groundY-230;//sets the y position
+            background.addChild(winImage);
+           }
         } // end of render function - DO NOT DELETE
         
         
@@ -115,7 +123,10 @@ var background = function (window) {
                 }
             }
             */
-            
+            if (!youWin && window.opspark.game.getScore() >= 10000){
+                youWin = true;
+                render();
+            }
 
         } // end of update function - DO NOT DELETE
         

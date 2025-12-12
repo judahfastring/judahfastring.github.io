@@ -25,7 +25,7 @@ var makeLevelData = function (window) {
           { type: "enemy", x: 500, y: groundY-50,damage:-20,image: "img/ufo.png", scaleX:-.08, scaleY:.08, offsetX:22, offsetY:-21, score:250, velocity:-1, hitZoneSize:25},
           { type: "reward", x: 1220, y: groundY,heal:20,image: "img/silver coin.png", scaleX:.225, scaleY:.225, offsetX:-27, offsetY:-27, score:2000, velocity:-2, hitZoneSize:25},
           { type: "reward", x: 900, y: groundY,heal:20,image: "img/gold coin.png", scaleX:.065, scaleY:.065, offsetX:-25, offsetY:-25, score:250, velocity:-2, hitZoneSize:25},
-          { type: "levelMarker", x: 1300, y: groundY-110,heal:20,image: "img/endLevel.png", scaleX:.75, scaleY:.76, offsetX:-300, offsetY:-358, score:1000, velocity:-1, hitZoneSize:50},
+          { type: "levelMarker", x: 1400, y: groundY-110,heal:20,image: "img/endLevel.png", scaleX:.75, scaleY:.76, offsetX:-300, offsetY:-358, score:1000, velocity:-2, hitZoneSize:50},
           { type: "enemy", x: 600, y: groundY-50,damage:-20,image: "img/arrow (1).png", scaleX:.75, scaleY:.75, offsetX:-27, offsetY:-27, score:250, velocity:-1, hitZoneSize:25},
           { type: "reward", x: 1000, y: groundY-180,heal:20,image: "img/ring.png", scaleX:.40, scaleY:.40, offsetX:-25, offsetY:0, score:2000, velocity:-2, hitZoneSize:25},
           
@@ -40,7 +40,7 @@ var makeLevelData = function (window) {
         gameItems: [
           { type: "reward", x: 1400, y: groundY-180,heal:20,image: "img/ring.png", scaleX:.40, scaleY:.40, offsetX:-25, offsetY:0, score:500, velocity:-2, hitZoneSize:25},
           { type: "reward", x: 1700, y: groundY-180,heal:20,image: "img/ring.png", scaleX:.40, scaleY:.40, offsetX:-25, offsetY:0, score:500, velocity:-2, hitZoneSize:25},
-          { type: "reward", x: 1800, y: groundY-180,heal:20,image: "img/ring.png", scaleX:.40, scaleY:.40, offsetX:-25, offsetY:0, score:500, velocity:-2, hitZoneSize:25},
+          { type: "reward", x: 1800, y: groundY-180,heal:20,image: "img/ring.png", scaleX:.40, scaleY:.40, offsetX:-25, offsetY:0, score:499, velocity:-2, hitZoneSize:25},
           { type: "enemy", x: 400, y: groundY-65,damage:-20,image: "img/arrow (1).png", scaleX:.75, scaleY:.75, offsetX:-27, offsetY:-27, score:250, velocity:-1, hitZoneSize:25},
           { type: "enemy", x: 500, y: groundY-65,damage:-20,image: "img/arrow (1).png", scaleX:.75, scaleY:.75, offsetX:-27, offsetY:-27, score:250, velocity:-1, hitZoneSize:25},
           { type: "obstacle", x: 600, y: groundY-10,damage:101, rotation: 0, image:"img/block.png", scaleX: .75, scaleY: .75, offsetX: -21.5, offsetY:-31.5, hitZone:25 },
@@ -54,7 +54,7 @@ var makeLevelData = function (window) {
           { type: "obstacle", x: 1860, y: groundY-20,damage:101, rotation: 0, image:"img/spike (1).png", scaleX: .70, scaleY: .60, offsetX: -43, offsetY:-53, hitZone:45 },
           { type: "obstacle", x: 1950, y: groundY-20,damage:101, rotation: 0, image:"img/spike (1).png", scaleX: .70, scaleY: .60, offsetX: -43, offsetY:-53, hitZone:45 },
           { type: "reward", x: 1550, y: groundY,heal:20,image: "img/key.png", scaleX:1, scaleY:1, offsetX:-25, offsetY:-25, score:2000, velocity:-2, hitZoneSize:25},
-          { type: "levelMarker", x: 1800, y: groundY-120,heal:0,image: "img/theDoor.png", scaleX:1, scaleY:1, offsetX:-25, offsetY:-25, score:0, velocity:-1.5, hitZoneSize:50},
+          { type: "levelMarker", x: 2200, y: groundY-120,heal:0,image: "img/theDoor.png", scaleX:1, scaleY:1, offsetX:-25, offsetY:-25, score:1, velocity:-2, hitZoneSize:50},
 
         ],  
       },
