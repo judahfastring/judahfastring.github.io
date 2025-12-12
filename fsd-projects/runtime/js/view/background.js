@@ -64,13 +64,13 @@ var background = function (window) {
                 circle.y = groundY * Math.random();//sets random y position
                 background.addChild(circle); //adds stars to the background container
             }
-            var moon = draw.bitmap("img/moon.png");//creates bitmap object
+            /*var moon = draw.bitmap("img/moon.png");//creates bitmap object
             moon.x = canvas.width - 425;//sets moons x position
             moon.y = canvas.height-925;//sets moons y position
             moon.scaleX = 1.0; //scales the moons width
             moon.scaleY = 1.0; //scales the monns height
             background.addChild(moon); //adds the moon to the background container
-            
+            */
             
             // TODO 4: Part 1 - Add buildings!     Q: This is before TODO 4 for a reason! Why?
             /*for (var i = 0; i < 10; ++i) {
@@ -84,11 +84,11 @@ var background = function (window) {
             }*/
             
             // TODO 3: Part 1 - Add a tree
-            tree = draw.bitmap("img/tree.png");//creates bitmap object using the tree image
+            /*tree = draw.bitmap("img/tree.png");//creates bitmap object using the tree image
             tree.x = 600;//sets the x postition
             tree.y = groundY-230;//sets the y position
             background.addChild(tree);//adds the tree to background container
-            
+            */
         } // end of render function - DO NOT DELETE
         
         
@@ -96,25 +96,25 @@ var background = function (window) {
         // called on each timer "tick" - 60 times per second
         function update() {
             // useful variables
-            var canvasWidth = app.canvas.width;
+            /*var canvasWidth = app.canvas.width;
             var canvasHeight = app.canvas.height;
             var groundY = ground.y;
-            
+            */
             // TODO 3: Part 2 - Move the tree!
-            tree.x = tree.x - 3;//moves tree to the left by subtracting form current x position
+            /*tree.x = tree.x - 3;//moves tree to the left by subtracting form current x position
             if (tree.x < -200) {//checks if tree has gone off left side of screen and resets it
             tree.x = canvasWidth;
-            }
+            }*/
             
             // TODO 4: Part 2 - Parallax
-            for (var i = 0; i < buildings.length; i++) {
+            /*for (var i = 0; i < buildings.length; i++) {
                 var building = buildings[i];
                 building.x -=1;//takes the x value and subtracts one so it moves to the left
                 if (building.x<-100){//checks if x value has gone off the screen, and if so, it sets it to the right side of the screen
                     building.x = canvasWidth;
                 }
             }
-
+            */
             
 
         } // end of update function - DO NOT DELETE
